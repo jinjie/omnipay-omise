@@ -1,0 +1,24 @@
+{
+    "name": "dilab/omnipay-omise",
+    "description": "omise gateway for Omnipay payment processing library",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "ext-json": "*",
+        "php-http/guzzle6-adapter": "^1.1",
+        "omnipay/common": "^3.0"
+    },
+    "autoload": {
+        "psr-4": { "Omnipay\\Omise\\" : "src/" }
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    },
+    "require-dev": {
+        "omnipay/tests": "^3.1"
+    }
+}

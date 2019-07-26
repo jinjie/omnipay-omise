@@ -1,0 +1,15 @@
+HTTP/1.1 400 Bad Request
+Server: nginx
+Date: Thu, 01 Aug 2019 10:12:00 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 184
+Referrer-Policy: strict-origin
+X-Request-Id: 5c6faa96-b29c-4a25-87df-f96b73c93f30
+X-Runtime: 0.052404
+
+{
+  "object": "error",
+  "location": "https://www.omise.co/api-errors#failed-refund",
+  "code": "failed_refund",
+  "message": "account does not have sufficient balance for a refund"
+}

@@ -1,0 +1,94 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Thu, 01 Aug 2019 08:13:18 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 160
+Referrer-Policy: strict-origin
+X-Request-Id: 5d4e1475-118f-4a93-b747-aab627435a7d
+X-Runtime: 0.037996
+
+{
+  "object": "charge",
+  "id": "chrg_test_5fvso4gk1mapqrty0cb",
+  "livemode": false,
+  "location": "/charges/chrg_test_5fvso4gk1mapqrty0cb",
+  "created_at": "2019-05-13T04:37:00Z",
+  "amount": 9110,
+  "currency": "THB",
+  "funding_amount": 9110,
+  "funding_currency": "THB",
+  "fee": 333,
+  "fee_vat": 23,
+  "interest": 0,
+  "interest_vat": 0,
+  "net": 8754,
+  "description": null,
+  "metadata": {
+    "order_id": "P26042018-01",
+    "color": "pink"
+  },
+  "status": "successful",
+  "capture": true,
+  "authorized": true,
+  "schedule": null,
+  "reversed": false,
+  "reversed_at": null,
+  "expires_at": "2019-05-20T04:37:00Z",
+  "expired": false,
+  "expired_at": null,
+  "voided": false,
+  "paid": true,
+  "paid_at": "2019-05-13T04:37:00Z",
+  "transaction": "trxn_test_5fvso4hwpkpvms9moj5",
+  "refunded_amount": 0,
+  "refunds": {
+    "object": "list",
+    "from": "1970-01-01T00:00:00Z",
+    "to": "2019-05-13T04:37:00Z",
+    "offset": 0,
+    "limit": 20,
+    "total": 0,
+    "order": "chronological",
+    "location": "/charges/chrg_test_5fvso4gk1mapqrty0cb/refunds",
+    "data": [
+
+    ]
+  },
+  "link": null,
+  "return_uri": null,
+  "failure_code": null,
+  "failure_message": null,
+  "card": {
+    "object": "card",
+    "id": "card_test_5fvso3c9stiq4z4lh0g",
+    "livemode": false,
+    "location": null,
+    "created_at": "2019-05-13T04:36:55Z",
+    "deleted": false,
+    "street1": null,
+    "street2": null,
+    "city": "Bangkok",
+    "state": null,
+    "postal_code": "10320",
+    "country": "gb",
+    "phone_number": null,
+    "financing": "credit",
+    "bank": "Bank of the Unbanked",
+    "last_digits": "4242",
+    "brand": "Visa",
+    "expiration_month": 12,
+    "expiration_year": 2022,
+    "fingerprint": "XjOdjaoHRvUGRfmZacMPcJtm0U3SEIIfkA7534dQeVw=",
+    "name": "Somchai Prasert",
+    "security_code_check": true
+  },
+  "customer": null,
+  "ip": null,
+  "dispute": null,
+  "source": null,
+  "disputable": true,
+  "capturable": false,
+  "reversible": false,
+  "refundable": true,
+  "authorize_uri": null
+}

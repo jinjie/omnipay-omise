@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Thu, 01 Aug 2019 08:13:18 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 160
+Referrer-Policy: strict-origin
+X-Request-Id: 5d4e1475-118f-4a93-b747-aab627435a7d
+X-Runtime: 0.037996
+
+{
+  "object": "refund",
+  "id": "rfnd_test_5fvso4dp4e4r00pyes2",
+  "livemode": false,
+  "location": "/charges/chrg_test_5g5idked981unmzjzhl/refunds/rfnd_test_5fvso4dp4e4r00pyes2",
+  "created_at": "2019-05-13T04:37:00Z",
+  "status": "closed",
+  "amount": 1000,
+  "currency": "THB",
+  "funding_amount": 2338,
+  "funding_currency": "THB",
+  "voided": true,
+  "charge": "chrg_test_5g5idked981unmzjzhl",
+  "transaction": "trxn_test_5fvso4e5tq54d5wlu74",
+  "metadata": {
+  }
+}

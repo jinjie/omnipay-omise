@@ -1,0 +1,15 @@
+HTTP/1.1 400 Bad Request
+Server: nginx
+Date: Thu, 01 Aug 2019 08:13:18 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 160
+Referrer-Policy: strict-origin
+X-Request-Id: 5d4e1475-118f-4a93-b747-aab627435a7d
+X-Runtime: 0.037996
+
+{
+  "object": "error",
+  "location": "https://www.omise.co/api-errors#failed-capture",
+  "code": "failed_capture",
+  "message": "charge was already captured"
+}
