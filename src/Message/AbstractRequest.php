@@ -115,6 +115,31 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $headers;
     }
 
+    protected function createClientRequest($data, array $headers = null)
+    {
+        $config                          = $this->httpClient->getConfig();
+        $curlOptions                     = $config->get('curl.options');
+        $curlOptions[CURLOPT_SSLVERSION] = 6;
+        $config->set('curl.options', $curlOptions);
+        $this->httpClient->setConfig($config);
+        // don't throw exceptions for 4xx errors
+        $this->httpClient->getEventDispatcher()->addListener(
+            'request.error',
+            function ($event) {
+                if ($event['response']->isClientError()) {
+                    $event->stopPropagation();
+                }
+            }
+        );
+        $httpRequest = $this->httpClient->createRequest(
+            $this->getHttpMethod(),
+            $this->getEndpoint(),
+            $headers,
+            $data
+        );
+        return $httpRequest;
+    }
+
     /**
      * Send the request with specified data
      *
@@ -127,15 +152,13 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
             $this->getHeaders(),
             array('Authorization' => 'Basic ' . base64_encode($this->getApiKey() . ':'))
         );
-        $body = $data ? http_build_query($data, '', '&') : null;
 
-        $httpResponse = $this
-            ->httpClient
-            ->request($this->getHttpMethod(), $this->getEndpoint(), $headers, $body);
+        $httpRequest  = $this->createClientRequest($data, $headers);
+        $httpResponse = $httpRequest->send();
 
         return $this->createResponse(
-            $httpResponse->getBody()->getContents(),
-            $httpResponse->getHeaders()
+            (string)$httpResponse->getBody(),
+            $httpResponse->getHeaders()->toArray()
         );
     }
 
