@@ -61,4 +61,11 @@ class GatewayTest extends GatewayTestCase
         $this->assertInstanceOf(Message\DeleteCardRequest::class, $request);
         $this->assertSame('cus_1MZSEtqSghKx99', $request->getCardReference());
     }
+
+    public function testFetchCharge()
+    {
+        $request = $this->gateway->fetchCharge(array('transactionReference' => 'chrg_test_5h0xs9ogsnmqe7y59hi'));
+
+        $this->assertInstanceOf(Message\FetchChargeRequest::class, $request);
+    }
 }
