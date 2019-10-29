@@ -22,6 +22,11 @@ class FetchChargeRequestTest extends TestCase
         $this->assertSame('https://api.omise.co/charges/chrg_test_5g5idked981unmzjzhl', $this->request->getEndpoint());
     }
 
+    public function testHttpMethod()
+    {
+        $this->assertSame('GET', $this->request->getHttpMethod());
+    }
+
     public function testSendSuccess()
     {
         $this->setMockHttpResponse('FetchChargeSuccess.txt');

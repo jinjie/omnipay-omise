@@ -12,6 +12,11 @@ class FetchChargeRequest extends AbstractRequest
         return $this->endpoint.'/charges/'.$this->getTransactionReference();
     }
 
+    public function getHttpMethod()
+    {
+        return 'GET';
+    }
+
     /**
      * Get the raw data array for this message. The format of this varies from gateway to
      * gateway, but will usually be either an associative array, or a SimpleXMLElement.
