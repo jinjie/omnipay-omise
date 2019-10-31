@@ -50,5 +50,17 @@ class PurchaseRequestTest extends TestCase
         $this->assertNull($response->getTransactionReference());
         $this->assertNull($response->getCardReference());
         $this->assertSame('token tokn_test_4xs9408a642a1htto8z was not found', $response->getMessage());
+        $this->assertSame('not_found', $response->getCode());
+    }
+
+    public function testSendErrorWithInvalidSecurityCode()
+    {
+        $this->setMockHttpResponse('PurchaseFailure_invalid_security_code.txt');
+        $response = $this->request->send();
+        $this->assertFalse($response->isSuccessful());
+        $this->assertFalse($response->isRedirect());
+        $this->assertNotNull($response->getTransactionReference());
+        $this->assertNotNull($response->getCardReference());
+        $this->assertSame('invalid_security_code', $response->getCode());
     }
 }

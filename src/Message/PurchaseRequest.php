@@ -27,4 +27,9 @@ class PurchaseRequest extends AuthorizeRequest
         $data['capture'] = 'true';
         return $data;
     }
+
+    protected function createResponse($data, $headers = [])
+    {
+        return $this->response = new PurchaseResponse($this, $data, $headers);
+    }
 }
