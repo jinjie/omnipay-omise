@@ -146,6 +146,11 @@ class AuthorizeRequest extends AbstractRequest
 
         if ($this->getSource()) {
             $data['source'] = $this->getSource();
+        } elseif ($this->getToken()) {
+            $data['card'] = $this->getToken();
+            if ($this->getCustomerReference()) {
+                $data['customer'] = $this->getCustomerReference();
+            }
         } elseif ($this->getCardReference()) {
             $data['card'] = $this->getCardReference();
             if ($this->getCustomerReference()) {

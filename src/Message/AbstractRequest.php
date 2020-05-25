@@ -153,7 +153,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
      * @param  string ... a variable length list of required parameters
      * @throws InvalidRequestException
      */
-    public function validate()
+    public function validate(...$args)
     {
         foreach (func_get_args() as $key) {
             $value = $this->parameters->get($key);
