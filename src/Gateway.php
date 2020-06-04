@@ -10,6 +10,7 @@ use Omnipay\Omise\Message\CreateCardRequest;
 use Omnipay\Omise\Message\CreateCustomerRequest;
 use Omnipay\Omise\Message\DeleteCardRequest;
 use Omnipay\Omise\Message\DeleteCustomerRequest;
+use Omnipay\Omise\Message\FetchChargeRequest;
 use Omnipay\Omise\Message\PurchaseRequest;
 use Omnipay\Omise\Message\RefundRequest;
 use Omnipay\Omise\Message\UpdateCardRequest;
@@ -108,5 +109,10 @@ class Gateway extends AbstractGateway
     public function deleteCustomer(array $parameters = array())
     {
         return $this->createRequest(DeleteCustomerRequest::class, $parameters);
+    }
+
+    public function fetchCharge(array $parameters = array())
+    {
+        return $this->createRequest(FetchChargeRequest::class, $parameters);
     }
 }
