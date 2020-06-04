@@ -30,7 +30,7 @@ class CaptureRequestTest extends TestCase
         $response = $this->request->send();
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
-        $this->assertSame('chrg_test_5fvso4gk1mapqrty0cb', $response->getTransactionReference());
+        $this->assertSame('trxn_test_5fvso4hwpkpvms9moj5', $response->getTransactionReference());
         $this->assertNull($response->getMessage());
     }
 

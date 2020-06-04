@@ -29,21 +29,30 @@ class Response extends AbstractResponse
         return $this->data['object'] !== 'error';
     }
 
+    public function getChargeReference()
+    {
+        if (isset($this->data['object']) && $this->data['object'] == 'charge') {
+            return $this->data['id'];
+        }
+
+        return null;
+    }
+
     public function getTransactionReference()
     {
         if (isset($this->data['object']) 
             && 'charge' === $this->data['object'] 
-            && isset($this->data['id'])
+            && isset($this->data['transaction'])
         ) {
-            return $this->data['id'];
+            return $this->data['transaction'];
         }
 
         $hasTransactionObjects = ['refund'];
         if (isset($this->data['object']) 
             && in_array($this->data['object'], $hasTransactionObjects, true) 
-            && isset($this->data['charge'])
+            && isset($this->data['transaction'])
         ) {
-            return $this->data['charge'];
+            return $this->data['transaction'];
         }
 
         return parent::getTransactionReference();

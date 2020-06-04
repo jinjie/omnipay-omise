@@ -10,14 +10,6 @@ class CompletePurchaseResponse extends Response
             isset($this->data['status']) && $this->data['status'] === 'successful';
     }
 
-    public function getTransactionReference()
-    {
-        if ($this->isSuccessful() && isset($this->data['id'])) {
-            return $this->data['id'];
-        }
-        return parent::getTransactionReference();
-    }
-
     public function isPending()
     {
         return isset($this->data['status']) && $this->data['status'] === 'pending';

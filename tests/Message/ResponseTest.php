@@ -14,7 +14,7 @@ class ResponseTest extends TestCase
 
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
-        $this->assertSame('chrg_test_5fvso4gk1mapqrty0cb', $response->getTransactionReference());
+        $this->assertSame('trxn_test_5fvso4hwpkpvms9moj5', $response->getTransactionReference());
         $this->assertSame('card_test_5fvso3c9stiq4z4lh0g', $response->getCardReference());
         $this->assertNull($response->getMessage());
     }

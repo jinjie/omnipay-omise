@@ -38,7 +38,7 @@ class VoidRequestTest extends TestCase
         $response = $this->request->send();
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
-        $this->assertSame('chrg_test_5fvso4gk1mapqrty0cb', $response->getTransactionReference());
+        $this->assertSame('trxn_test_5fvso4e5tq54d5wlu74', $response->getTransactionReference());
         $this->assertNull($response->getCardReference());
         $this->assertNull($response->getMessage());
     }
