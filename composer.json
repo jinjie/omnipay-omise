@@ -6,7 +6,7 @@
     "minimum-stability": "stable",
     "require": {
         "ext-json": "*",
-        "php-http/guzzle6-adapter": "^1.1|2",
+        "php-http/guzzle6-adapter": "^1.1|^2",
         "omnipay/common": "^3.0"
     },
     "autoload": {
