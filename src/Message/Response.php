@@ -83,6 +83,15 @@ class Response extends AbstractResponse
         }
         return null;
     }
+    
+    protected function getCustomerReference($response)
+    {
+        if (isset($this->data['object']) && 'customer' === $this->data['object']) {
+            return $this->data['id'];
+        }
+
+        return null;
+    }
 
     public function getMessage()
     {
