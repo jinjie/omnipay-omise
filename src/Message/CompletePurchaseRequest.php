@@ -9,7 +9,7 @@ class CompletePurchaseRequest extends AbstractRequest
 
     public function getEndpoint()
     {
-        return $this->endpoint.'/charges'.$this->getTransactionReference();
+        return $this->endpoint.'/charges/'.$this->getTransactionReference();
     }
 
     public function getHttpMethod()
