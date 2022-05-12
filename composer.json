@@ -7,7 +7,7 @@
     "require": {
         "ext-json": "*",
         "php-http/guzzle6-adapter": "^1.1|^2",
-        "omnipay/common": "^3.0"
+        "omnipay/common": "^2"
     },
     "autoload": {
         "psr-4": { "Omnipay\\Omise\\" : "src/" }
